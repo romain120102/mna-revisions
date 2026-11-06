@@ -81,7 +81,7 @@
     var i = MNA.order.indexOf(id), prev = MNA.order[i - 1], next = MNA.order[i + 1];
     var toc = '<div class="toc"><b>Sommaire</b><ol>' + c.sections.map(function (s, k) { return '<li><a href="#/fiche/' + id + '" data-go="s' + k + '">' + esc(s.t) + '</a></li>'; }).join('') + '</ol></div>';
     var h = '<h1>' + esc(c.titre) + '</h1><p class="lead">' + esc(c.sous) + '</p>' +
-      '<div class="legend"><span><span class="badge b-must">À SAVOIR</span>tombe très probablement</span><span><span class="badge b-know">À COMPRENDRE</span>logique du cours</span><span><span class="badge b-detail">DÉTAIL</span>culture, ne pas apprendre par cœur</span></div>' + toc;
+      '<div class="legend"><span><span class="badge b-must">MUST KNOW</span>tombe très probablement</span><span><span class="badge b-know">UNDERSTAND</span>logique du cours</span><span><span class="badge b-detail">DETAIL</span>culture, ne pas apprendre par cœur</span></div>' + toc;
     c.sections.forEach(function (s, k) { h += '<section id="s' + k + '"><h2>' + esc(s.t) + '</h2>' + s.h + '</section>'; });
     h += '<h2>À retenir en 1 minute</h2><div class="box must">' + c.retenir + '</div>';
     h += '<div class="row"><button class="btn" id="markread">' + (store.read[id] ? '✅ Fiche lue (clique pour annuler)' : 'Marquer comme lue') + '</button><a class="btn sec" href="#/train/' + id + '">S\'entraîner sur ce cours (' + c.qs.length + ' questions)</a></div>' +
