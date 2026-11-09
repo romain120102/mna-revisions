@@ -1,7 +1,7 @@
 MNA.add('c5', {
   titre: 'Class 5 – Intrinsic Valuation',
-  sous: 'DCF, WACC, CAPM, beta, terminal value, free cash flow, EV-to-equity bridge',
-  resume: 'Comment faire la valuation d\'une company par ses future cash flows discounted : Gordon, DCF, WACC, cost of equity (CAPM), beta, terminal value, FCFF/FCFE et EV → equity bridge.',
+  sous: 'DCF, WACC, CAPM, beta, terminal value, free cash flow',
+  resume: 'Comment faire la valuation d\'une company par ses future cash flows discounted : Gordon, DCF, WACC, cost of equity (CAPM), beta, terminal value et FCFF/FCFE.',
   sections: [
     { t: '1. Valuation : purpose et families of methods', h: `
 <p>Faire une valuation, c\'est estimer ce que vaut une company. Trois approches : <b>income-based</b> (future cash flows), <b>market-based</b> (comparables) et <b>asset-based</b> (assets). Ce cours porte sur la première, dite <b>intrinsic</b>.</p>
@@ -172,51 +172,6 @@ Kd doit être dans la <b>même currency</b> que Ke et que les cash flows.</div>
  <div class="col-box yellow"><h4>FCFE + Ke</h4><p>→ <b>Equity Value</b> directement</p><p>Nécessite de suivre debt et cash year by year.</p></div>
 </div><div class="cap">Consistency rule : le discount rate doit correspondre aux investors qui perçoivent le cash flow.</div></div>` },
 
-    { t: '9. From DCF to equity value : the bridge', h: `
-<div class="diagram"><div class="flow col">
- <div class="n green"><b>Enterprise Value (EV)</b>present value des FCFF + terminal value = value of operations</div><div class="ar">→</div>
- <div class="n"><b>(+) Non-operating assets</b>cash, cash-like (pension surplus, insurance receivables, unused assets), equity investments (associates / JV), NOL (tax loss carryforwards), other non-strategic assets</div><div class="ar">→</div>
- <div class="n red"><b>(−) Debt and debt-like</b>total debt (+ leasing), debt-like (unfunded pensions, convertibles, provisions…), preferred shares, <b>non-controlling interests (NCI)</b>, other liabilities</div><div class="ar">→</div>
- <div class="n yellow"><b>= Equity Value</b></div><div class="ar">→</div>
- <div class="n"><b>÷ diluted number of shares</b> = value per share</div>
-</div></div>
-
-<div class="box must"><span class="badge b-must">MUST KNOW</span><b>Why these adjustments?</b>
-<ul><li><b>Debt</b> : subtracted car l\'acquirer doit en général la repay au closing.</li><li><b>Cash</b> : added (en théorie seulement l\'excess cash vs minimum operating cash).</li><li><b>Preferred shares</b> : hybrides, fixed priority dividends → traitées comme de la debt.</li><li><b>Unfunded pensions</b> : commitment à payer plus tard → subtracted (important pour l\'automotive…).</li><li><b>Minority stakes (equity investments, &lt; 50 %)</b> : non-operating assets (hors DCF) → <b>added</b>.</li><li><b>Non-controlling interests (NCI)</b> : quand on détient &gt; 50 %, on <b>consolide 100 %</b> de la subsidiary ; or l\'equity value ne revient qu\'à la part détenue → on <b>soustrait</b> la part des minority shareholders.</li><li><b>NOL</b> : future tax savings → added.</li></ul></div>
-
-<h3>Equity investments : 3 accounting treatments</h3>
-<div class="tblwrap"><table>
-<tr><th></th><th>Passive minority</th><th>Active minority (significant influence)</th><th>Majority (control)</th></tr>
-<tr><td><b>Method</b></td><td>Cost method</td><td>Equity method</td><td>Consolidation</td></tr>
-<tr><td><b>Income statement</b></td><td>Only dividends received</td><td>% × résultat net, ligne « income from associates »</td><td>Consolidated 100 %, puis on soustrait la part des minorities</td></tr>
-<tr><td><b>Balance sheet</b></td><td>Trading / AFS / HTM</td><td>% × value, as « investments in shares »</td><td>100 % + NCI in equity</td></tr>
-</table></div>
-<div class="box detail"><span class="badge b-detail">DETAIL</span>En pratique on ajoute la book value des minority stakes et on retranche les minorities (en book value). Compromis : <b>market value solution</b> (si la subsidiary est listed) ou <b>relative value solution</b> (multiplier la book value par le P/B moyen du sector).</div>
-
-<h3>Diluted shares : Treasury Stock Method</h3>
-<p>Market cap = <b>share price × number of shares</b>. Mais options, warrants, convertibles… peuvent créer de nouvelles shares → il faut utiliser la <b>diluted equity value</b>, sinon on sous-estime le cost de l\'acquisition.</p>
-<ul>
-<li><b>Options et warrants</b> : <b>Treasury Stock Method</b> – on suppose que les options in-the-money sont exercised et que la company rachète des shares avec le cash reçu.</li>
-<li><b>Convertibles</b> : soit <b>debt</b>, soit 100 % en additional shares (no TSM).</li>
-<li><b>RSU</b> : direct addition. <b>Performance shares</b> : counted only si le price target est atteint.</li>
-</ul>
-<div class="box ex"><b>TSM example</b> : 1,000 shares ; 200 options at $5 ; share price $10. New shares : 200. Cash received : 200 × 5 = $1,000 → buyback de 1,000 / 10 = 100 shares. Net additional shares = 100 → <b>1,100 diluted shares</b>.</div>
-
-<h3>Capital structure : l\'EV bouge peu, l\'equity value beaucoup</h3>
-<div class="tblwrap"><table>
-<tr><th></th><th>Company A</th><th>Company B</th><th>Company C</th></tr>
-<tr><td>Share price × shares → Equity Value</td><td>10 × 1 000 = 10 000</td><td>10 × 900 = 9 000</td><td>10 × 1 100 = 11 000</td></tr>
-<tr><td>+ Debt</td><td>1 600</td><td>2 600</td><td>600</td></tr>
-<tr><td>+ Preferred</td><td>200</td><td>200</td><td>200</td></tr>
-<tr><td>− Cash</td><td>(300)</td><td>(300)</td><td>(300)</td></tr>
-<tr><td><b>= Enterprise Value</b></td><td><b>11 500</b></td><td><b>11 500</b></td><td><b>11 500</b></td></tr>
-</table></div>
-<ul>
-<li>Les <b>financing operations n'affectent pas l'EV</b> : émettre de la debt (cash et debt montent), rembourser, émettre des shares, racheter des shares, payer des dividends (cash et equity bougent en sens inverse). Idée de <b>Modigliani-Miller</b> : dans un perfect market, la valeur ne dépend pas de la capital structure.</li>
-<li>L'EV ne change que si les <b>net operating assets (NOA)</b> changent : PP&amp;E ↑, inventory ↑ → EV ↑ ; receivables ↓ (collected) ou deferred revenue ↑ (operating liability) → EV ↓.</li>
-<li>En réalité, le WACC change avec la capital structure, donc l\'EV bouge <b>un peu</b>.</li>
-</ul>
-<div class="box tip"><b>House analogy :</b> le price affiché (equity value) n\'est pas le cost réel : il y a le prêt à rembourser (debt), des meubles laissés (cash), des réparations (liabilities). L\'EV est le « price de la maison » quel que soit le financing structure.</div>` }
   ],
   retenir: `<ul>
 <li><b>Value ≠ price.</b> Les écarts viennent surtout des <b>growth</b> assumptions.</li>
@@ -226,9 +181,7 @@ Kd doit être dans la <b>même currency</b> que Ke et que les cash flows.</div>
 <li>β<sub>L</sub> = β<sub>U</sub>[1 + (1 − t)D/E]. Bottoms-up : unlever les comparables, relever avec la capital structure de la target.</li>
 <li>Kd : bond yield, ou rating, ou synthetic rating via l\'ICR = EBIT / interest.</li>
 <li>TV = FCF<sub>N</sub>(1 + g)/(r − g) ; g ≤ growth de l\'économie ; TV + rate = ce qui pèse le plus.</li>
-<li>FCF = OCF − CapEx · <b>FCFF + WACC → EV</b> · <b>FCFE + Ke → equity value</b>.</li>
-<li>EV → Equity : + cash, + minority stakes, + NOL ; − debt, − debt-like (pensions, leasing), − preferred, − NCI ; puis ÷ diluted shares (TSM).</li>
-<li>Financing ne change pas l\'EV (seuls les operating assets le font).</li></ul>`,
+<li>FCF = OCF − CapEx · <b>FCFF + WACC → EV</b> · <b>FCFE + Ke → equity value</b>.</li></ul>`,
   qs: [
     Q('Which valuation approach is considered "intrinsic"?', ['Comparable company multiples', 'Discounted cash flow (income-based)', 'Precedent transaction multiples', 'Book value'], 1,
       ['Les multiples comparables sont une approche de market.', 'Le DCF fonde la valeur sur les cash flows futurs actualisés, indépendamment du market.', 'Approche de market également.', 'La book value est une approche par les assets.']),
@@ -304,24 +257,6 @@ Kd doit être dans la <b>même currency</b> que Ke et que les cash flows.</div>
       ['Cela vient du FCFF + WACC.', 'FCFE concerne les shareholders : on obtient la equity value.', 'La net debt est un élément du pont EV → equity value, pas un résultat d\'actualisation.', 'Le WACC est un rate d\'actualisation, pas une valeur obtenue par actualisation.']),
     Q('Which of the following is a reason why capital structure is ignored when estimating FCFF?', ['Because debt does not exist', 'It makes firms comparable and the capital structure is somewhat discretionary', 'Because taxes are zero', 'Because FCFE is always higher'], 1,
       ['La debt existe bel et bien ; on l\'ignore dans le FCFF pour comparer les companies, pas parce qu\'elle n\'existe pas.', 'Cela rend les companies comparables et la structure peut être choisie différemment par les propriétaires.', 'Les taxes sont pris en compte (EBIT × (1 − t)) ; ce n\'est pas la raison.', 'FCFE n\'est pas toujours plus élevé que FCFF ; ce n\'est pas lié à la raison d\'ignorer la structure du capital.']),
-    Q('EV = 1,000; cash = 100; debt = 300; preferred stock = 50; non-controlling interests = 50. The equity value is:', ['700', '800', '600', '1,500'], 0,
-      ['EQV = 1 000 + 100 − 300 − 50 − 50 = 700.', 'On a oublié préférentielles ou NCI.', 'Cash non ajouté.', 'Erreur de signes.']),
-    Q('Why are non-controlling interests subtracted in the bridge from EV to equity value?', ['Because they are debt', 'Because the parent consolidates 100% of the subsidiary while shareholders own only part of it', 'Because they are tax assets', 'Because they are non-operating assets'], 1,
-      ['Pas de la debt.', 'Consolidation à 100 % : il faut retirer la part qui appartient aux minoritaires.', 'Pas des assets fiscaux.', 'Ce sont plutôt les participations dans des tiers qui sont des assets non opérationnels.']),
-    Q('Equity investments in associates (<50%) are in the bridge:', ['Subtracted', 'Added, as non-operating assets', 'Ignored', 'Treated as debt'], 1,
-      ['On les ajoute, on ne les soustrait pas : ce sont des assets qui ne sont pas dans les cash flows opérationnels du DCF.', 'Ces participations ne figurent pas dans les cash flows opérationnels du DCF : on les ajoute.', 'Les ignorer sous-évaluerait la company : ces assets ont une valeur.', 'Ce sont des assets détenus, pas des engagements ; ils ne sont pas assimilés à de la debt.']),
-    Q('Unfunded pension obligations are treated as:', ['Cash-like items (added)', 'Debt-like items (subtracted)', 'Equity investments', 'Ignored'], 1,
-      ['Un surplus de pension serait cash-like ; ici l\'engagement est sous-financé.', 'La company devra trouver du cash pour les payer : traité comme de la debt.', 'Les engagements de retraite sont des obligations de payer, pas des participations dans d\'autres companies.', 'Faux, c\'est important pour certains secteurs (automobile).']),
-    Q('A company has 1,000 shares and 200 in-the-money options with an exercise price of $5. The share price is $10. Using the Treasury Stock Method, the diluted share count is:', ['1,200', '1,100', '1,000', '1,050'], 1,
-      ['On a ignoré le rachat avec les fonds reçus.', '200 nouvelles shares − 100 rachetées (200 × 5 / 10) = 100 net : 1 100 shares.', 'Ignore les options.', 'Calcul incorrect.']),
-    Q('Convertible bonds in the diluted share count are treated as:', ['Treasury Stock Method like options', 'Either debt or 100% as additional shares', 'Preferred stock', 'Ignored'], 1,
-      ['Le TSM ne s\'applique pas aux convertibles.', 'Traitement « either-or » : debt, ou 100 % en shares supplémentaires.', 'Une obligation convertible n\'est pas une action préférentielle ; elle est traitée comme debt ou comme des shares.', 'On ne les ignore pas : si elles sont convertibles, elles peuvent créer des shares et diluer.']),
-    Q('Which of the following events changes the Enterprise Value (in theory)?', ['Issuing new debt and keeping the cash', 'Repurchasing shares with cash', 'An increase in PP&E funded by cash', 'Paying a dividend'], 2,
-      ['Cash et debt augmentent ensemble : l\'EV ne change pas.', 'Cash et equity baissent ensemble : EV inchangée.', 'PP&E est un actif opérationnel : les assets opérationnels nets augmentent, donc l\'EV augmente.', 'Cash et equity baissent : EV inchangée.']),
-    Q('Companies A, B and C have the same enterprise value of 11,500 but different debt levels. What does this illustrate?', ['Equity value is independent of capital structure', 'Enterprise value is largely independent of capital structure, while equity value depends on it', 'Debt is irrelevant', 'WACC is constant'], 1,
-      ['C\'est l\'inverse : l\'equity value varie avec la debt.', 'L\'EV reste (presque) identique ; l\'equity value change avec le mix debt/equity.', 'La debt compte dans le calcul de l\'equity value.', 'Dans la réalité le WACC varie un peu avec la structure.']),
-    Q('Why is it more accurate to use the diluted equity value in an acquisition?', ['Because dilutive in-the-money securities are cashed out or converted at the buyer\'s cost', 'Because it lowers the price', 'Because options have no value', 'Because it ignores share count'], 0,
-      ['Les titres dilutifs in-the-money sont réglés en cash ou convertis : le buyer doit en supporter le cost.', 'L\'equity value diluée est plus élevée, pas plus basse.', 'Elles ont une valeur si elles sont in-the-money.', 'Au contraire, on corrige le nombre de shares.']),
     Q('Which of the following is NOT a limitation of CAPM mentioned in the course?', ['It is backward-looking', 'It captures only systematic risk', 'Other risk factors (size, value, momentum) also explain returns', 'It always gives a negative cost of equity'], 3,
       ['C\'est une limite citée.', 'Limite citée : ignore le risk spécifique.', 'Limite citée : modèles multifactoriels.', 'Le CAPM ne donne pas systématiquement un cost négatif : cette affirmation est fausse.'])
   ]
